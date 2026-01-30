@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-950: #020617;
+  --color-brand-900: #0f172a;
+  --color-brand-800: #1e293b;
+  --color-brand-700: #334155;
+  --color-brand-600: #475569;
+  
+  --color-accent-500: #6366f1; /* Indigo */
+  --color-accent-600: #4f46e5;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --animate-enter-drawer: drawer-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-exit-drawer: drawer-out 0.2s ease-in;
+  
+  @keyframes drawer-in {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes drawer-out {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+  }
+}
+
+:root {
+  --background: var(--color-brand-950);
+  --foreground: #f8fafc;
+  --card-bg: var(--color-brand-900);
+  --card-border: var(--color-brand-800);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for "Premium" feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-700);
+}
