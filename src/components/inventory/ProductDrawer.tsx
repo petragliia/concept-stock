@@ -63,7 +63,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 z-40 bg-brand-950/80 backdrop-blur-sm"
+                        className="fixed inset-0 z-[100] bg-brand-950/80 backdrop-blur-sm"
                     />
 
                     {/* Drawer */}
@@ -72,7 +72,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="fixed inset-y-0 right-0 z-50 w-full md:max-w-md bg-brand-900 border-l border-brand-800 shadow-2xl flex flex-col"
+                        className="fixed inset-y-0 right-0 z-[101] w-full md:max-w-md bg-brand-900 border-l border-brand-800 shadow-2xl flex flex-col"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between px-6 py-4 border-b border-brand-800/50">
@@ -171,7 +171,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
                         </div>
 
                         {/* Footer */}
-                        <div className="p-6 border-t border-brand-800/50 bg-brand-950/30">
+                        <div className="p-6 border-t border-brand-800/50 bg-brand-950/30 pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
                             <div className="flex gap-3">
                                 <button
                                     onClick={onClose}

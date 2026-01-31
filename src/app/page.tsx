@@ -3,6 +3,7 @@
 import { StatsSection } from "@/components/dashboard/StatsSection";
 import { InventoryTable } from "@/components/inventory/InventoryTable";
 import { ProductDrawer } from "@/components/inventory/ProductDrawer";
+import { WelcomeModal } from "@/components/dashboard/WelcomeModal";
 import { useInventoryStore } from "@/store/inventoryStore";
 import { motion } from "framer-motion";
 import { Plus, PlayCircle } from "lucide-react";
@@ -77,6 +78,9 @@ export default function Dashboard() {
 
             {/* Drawer */}
             <ProductDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+
+            {/* Demo Welcome Modal */}
+            <WelcomeModal />
         </div>
     );
 }
