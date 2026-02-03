@@ -8,18 +8,16 @@ export function WelcomeModal() {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        // Show modal on first visit in this session
-        const hasSeenWelcome = sessionStorage.getItem('concept-stock-welcome');
-        if (!hasSeenWelcome) {
-            // Small delay for entrance animation
-            const timer = setTimeout(() => setIsOpen(true), 1000);
-            return () => clearTimeout(timer);
-        }
+        // Force show modal on mount
+        const timer = setTimeout(() => setIsOpen(true), 1000);
+        return () => clearTimeout(timer);
     }, []);
 
     const handleClose = () => {
         setIsOpen(false);
         sessionStorage.setItem('concept-stock-welcome', 'true');
+        // Dispatch event so other components know the welcome sequence is done
+        window.dispatchEvent(new Event('concept-welcome-closed'));
     };
 
     return (

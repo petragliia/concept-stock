@@ -72,7 +72,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="fixed inset-y-0 right-0 z-[101] w-full md:max-w-md bg-brand-900 border-l border-brand-800 shadow-2xl flex flex-col"
+                        className="fixed inset-y-0 right-0 z-[200] w-full md:max-w-md bg-brand-900 border-l border-brand-800 shadow-2xl flex flex-col"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between px-6 py-4 border-b border-brand-800/50">
@@ -87,7 +87,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
 
                         {/* Body */}
                         <div className="flex-1 overflow-y-auto p-6">
-                            <form id="product-form" onSubmit={handleSubmit} className="space-y-6">
+                            <form id="product-form" onSubmit={handleSubmit} className="space-y-6 pb-32">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-300">Nome do Produto</label>
                                     <input
@@ -171,7 +171,7 @@ export function ProductDrawer({ isOpen, onClose }: ProductDrawerProps) {
                         </div>
 
                         {/* Footer */}
-                        <div className="p-6 border-t border-brand-800/50 bg-brand-950/30 pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
+                        <div className="p-6 border-t border-brand-800/50 bg-brand-950/30 pb-24 md:pb-6">
                             <div className="flex gap-3">
                                 <button
                                     onClick={onClose}
